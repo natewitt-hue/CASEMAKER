@@ -1,0 +1,70 @@
+# ─── Bulk data ────────────────────────────────────────────────────────────
+# All raw datasets are public-domain government data, downloadable from
+# their original sources. Re-fetch via the documented import pipeline.
+# See: docs/superpowers/specs/2026-04-08-storage-and-bulk-import-design.md
+MAP FILES/
+input/
+output/
+*.ndjson
+*.csv.gz
+*.parquet
+
+# ─── Importer / scraper output ────────────────────────────────────────────
+*.log
+charley_scraper.log
+map_importer.log
+scraped_pages/
+raw_staging_archive/
+
+# ─── Python ───────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+build/
+dist/
+
+# ─── Virtual environments ─────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env
+
+# ─── Secrets / credentials ────────────────────────────────────────────────
+.env.*
+!.env.example
+*.key
+*.pem
+credentials*
+secrets*
+*.token
+.aws/
+
+# ─── Node (for future webapp / scraper tooling) ───────────────────────────
+node_modules/
+.next/
+.turbo/
+*.tsbuildinfo
+
+# ─── OS / archive artifacts ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+__MACOSX/
+*.zip
+*.tar.gz
+
+# ─── IDE ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-*
