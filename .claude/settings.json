@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P=\"$(command -v py || command -v python3 || command -v python)\"; [ -n \"$P\" ] && [ -f \"${CLAUDE_PROJECT_DIR}/.claude/hooks/agent_budget.py\" ] && \"$P\" \"${CLAUDE_PROJECT_DIR}/.claude/hooks/agent_budget.py\"; exit 0",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "P=\"$(command -v py || command -v python3 || command -v python)\"; [ -n \"$P\" ] && [ -f \"${CLAUDE_PROJECT_DIR}/.claude/hooks/agent_budget.py\" ] && \"$P\" \"${CLAUDE_PROJECT_DIR}/.claude/hooks/agent_budget.py\"; exit 0",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+# Codex limits for this repo (any account, any machine). Why: docs/AGENT-BUDGET.md (agent kit v1).
+# 2026-11-02 BookedInIowa review: 11.2B Codex input tokens; agents spawned agents at
+# 400k-700k context, and 20% of input went to wait_agent polling.
+
+# Compact at 350k instead of the home config's 700k.
+model_auto_compact_token_limit = 350000
+
+[agents]
+# The root session may spawn workers; workers may not spawn their own.
+max_depth = 1
+max_concurrent_threads_per_session = 4
+default_subagent_reasoning_effort = "medium"
+
+[features.multi_agent_v2]
+max_concurrent_threads_per_session = 4
+# A wait blocks up to 10 minutes for a result instead of waking to poll.
+default_wait_timeout_ms = 600000
+max_wait_timeout_ms = 1800000
